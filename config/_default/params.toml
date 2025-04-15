@@ -87,8 +87,8 @@ admin = ""
 adminLabel = ""
 
 [comments.utterances]
-repo = ""
-issueTerm = "xZhongjie/blog_comments"
+repo = "xZhongjie/blog_comments"
+issueTerm = "pathname"
 label = ""
 
 [comments.remark42]
