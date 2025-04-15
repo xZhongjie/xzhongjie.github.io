@@ -88,7 +88,7 @@ adminLabel = ""
 
 [comments.utterances]
 repo = ""
-issueTerm = "xZhongjie/xzhongjie.github.io"
+issueTerm = "xZhongjie/blog_comments"
 label = ""
 
 [comments.remark42]
