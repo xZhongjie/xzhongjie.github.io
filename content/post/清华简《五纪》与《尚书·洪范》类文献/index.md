@@ -1,3 +1,8 @@
+---
+title: "清华简《五纪》与《尚书·洪范》类文献"
+date: 2025-04-14T22:05:28+08:00
+draft: false
+---
 # 清华简《五纪》与《尚书·洪范》类文献
 
 <div style="text-align:center;font-size:18px;">主讲人：中国人民大学哲学院 曹峰</div>
