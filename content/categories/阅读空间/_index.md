@@ -1,10 +1,10 @@
 ---
-title: 且歌且行
+title: 阅读空间
 description: 
 image: cover.png
 
 # Badge style
 style:
-    background: "#f0e9b2"
+    background: "#f9b14e"
     color: "#fff"
 ---
