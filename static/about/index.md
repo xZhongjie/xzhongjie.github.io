@@ -1,10 +1,6 @@
 ---
 title: "关于"
-date: 2025-04-19T14:30:00+08:00
-draft: false
-author: "xZhongjie"
-layout: "about"
-slug: "about"
+date: 2022-03-06
 menu:
     main:
         weight: 4

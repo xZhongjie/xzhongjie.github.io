@@ -36,9 +36,6 @@ type = "search"
 [[widgets.homepage]]
 type = "archives"
 
-[[widgets.homepage]]
-type = "about"
-
 [widgets.homepage.params]
 limit = 5
 
