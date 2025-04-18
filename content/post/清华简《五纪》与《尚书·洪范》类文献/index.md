@@ -4,7 +4,7 @@ date: 2025-04-14T22:05:28+08:00
 draft: false
 description: "本文系对中国人民大学哲学院曹峰教授专题讲座《清华简<五纪>与<尚书·洪范>类文献》的内容整理。"
 readingTime : false
-
+image : "avatar.png"
 ---
 # 清华简《五纪》与《尚书·洪范》类文献
 
