@@ -11,8 +11,6 @@ tags:
 - 清华简
 - 尚书
 ---
-# 清华简《五纪》与《尚书·洪范》类文献
-
 <div style="text-align:center;font-size:18px;">主讲人：中国人民大学哲学院 曹峰</div>
 
 ## 写在前面

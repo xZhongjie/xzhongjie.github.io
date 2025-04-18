@@ -17,7 +17,7 @@ icon = "brand-github"
 
 [[social]]
 identifier = "bili"
-name = "bili"
+name = "Bilibili"
 url = "https://space.bilibili.com/231232390"
 
 [social.params]
