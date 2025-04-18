@@ -22,9 +22,3 @@ url = "https://twitter.com"
 
 [social.params]
 icon = "brand-twitter"
-
-[[menu.main]]
-  name = "关于"
-  weight = 5
-  url = "about"
-  identifier = "about"
