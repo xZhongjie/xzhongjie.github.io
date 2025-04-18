@@ -1,7 +1,7 @@
 ---
 title: 讲座纪要
 description: 
-image:
+image: cover.png
 
 # Badge style
 style:
