@@ -2,7 +2,7 @@
 title: "WorldPainter你真的掌握了吗？ WorldPainter基础教程"
 date: 2025-02-05T22:05:28+08:00
 draft: false
-description: "全新的适应当下WorldPainter版本的WP图文教程."
+description: "全新的适应当下WorldPainter版本的WP图文教程。"
 readingTime : false
 image : "cover.png"
 categories:
