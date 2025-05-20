@@ -25,7 +25,7 @@ article:
         other: 最后更新于
 
     readingTime:
-        other: "本文共 {{ .ReadingTime }} 字，需要阅读约 {{ .WordCount}} 分钟"
+        other: "本文共 {{ .ReadingTime }} 字，需要阅读约 {{ .WordCount }} 分钟"
 
 notFound:
     title:
