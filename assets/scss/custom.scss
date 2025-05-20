@@ -10,3 +10,6 @@
 .article-subtitle{
     font-size: 18px !important;
   }
+
+.forasoul{display: block;}
+@media (max-width: 768px){.forasoul{display: none;}}
