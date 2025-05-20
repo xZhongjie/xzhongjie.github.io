@@ -11,5 +11,6 @@
     font-size: 18px !important;
   }
 
+/*手机端不显示Asoul计数器*/
 .forasoul{display: block;}
 @media (max-width: 768px){.forasoul{display: none;}}
