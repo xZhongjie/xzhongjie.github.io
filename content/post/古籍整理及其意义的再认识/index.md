@@ -3,7 +3,6 @@ title: "古籍整理及其意义的再认识"
 date: 2025-04-10T22:05:28+08:00
 draft: false
 description: "本文系对北京大学吴国武教授专题讲座《古籍整理及其意义的再认识》的内容整理。"
-readingTime : false
 image : "cover.png"
 categories:
 - 讲座纪要

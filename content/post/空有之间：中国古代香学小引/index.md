@@ -3,7 +3,6 @@ title: "空有之间：中国古代香学小引"
 date: 2025-05-16T22:05:28+08:00
 draft: false
 description: "本文系对中国人民大学国学院李萌昀副教授专题讲座《空有之间：中国古代香学小引》的内容整理。"
-readingTime : false
 categories:
 - 讲座纪要
 tags:

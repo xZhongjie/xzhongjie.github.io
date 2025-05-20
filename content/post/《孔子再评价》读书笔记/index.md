@@ -3,7 +3,6 @@ title: "《孔子再评价》读书笔记"
 date: 2025-04-30T15:05:28+08:00
 draft: false
 description: "本文系阅读李泽厚《中国古代思想史论》中《孔子再评价》过程中所作的笔记。"
-readingTime : false
 categories:
 - 课堂笔记
 tags:

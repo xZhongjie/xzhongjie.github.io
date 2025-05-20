@@ -3,7 +3,6 @@ title: "微观经济学原理复习"
 date: 2024-12-28T22:05:28+08:00
 draft: false
 description: ""
-readingTime : false
 image : ""
 categories:
 - 课堂笔记
