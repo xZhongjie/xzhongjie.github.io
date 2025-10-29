@@ -1,6 +1,7 @@
 ---
 title: 思想记录
 description: 
+image: cover.png
 
 # Badge style
 style:
