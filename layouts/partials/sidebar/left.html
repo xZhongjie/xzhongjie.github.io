@@ -56,7 +56,6 @@
             {{ end }}
         </ol>
     {{- end -}}
-    {{ if .IsHome }}
     <img id="forasoul-counter" class="forasoul" alt="visits" />
     <script>
     (function(){
@@ -102,7 +101,6 @@
         });
     })();
     </script>
-    {{ end }}
     <ol class="menu" id="main-menu">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
