@@ -1,0 +1,901 @@
+<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="使用AI辅助编写Worldmachine中Code模块代码的提示词。"><title>WorldmachineCodePrompt</title><link rel=canonical href=https://xzhongjie.github.io/p/worldmachinecodeprompt/><link rel=stylesheet href=/scss/style.min.ec95a8b9f278014ee967404fafda3b3d292bd5f6e45d2000339697dbda8da359.css><meta property='og:title' content="WorldmachineCodePrompt"><meta property='og:description' content="使用AI辅助编写Worldmachine中Code模块代码的提示词。"><meta property='og:url' content='https://xzhongjie.github.io/p/worldmachinecodeprompt/'><meta property='og:site_name' content="xZhongjie's blog"><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='地形'><meta property='article:tag' content='Worldmachine'><meta property='article:published_time' content='2025-07-03T13:09:10+08:00'><meta property='article:modified_time' content='2025-07-03T13:09:10+08:00'><meta name=twitter:title content="WorldmachineCodePrompt"><meta name=twitter:description content="使用AI辅助编写Worldmachine中Code模块代码的提示词。"><link rel="shortcut icon" href=/favicon.ico></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/avatar_hu_3b4fa98dc943d54c.png width=300 height=300 class=site-logo loading=lazy alt=Avatar></a></figure><div class=site-meta><h1 class=site-name><a href=/>xZhongjie's blog</a></h1><h2 class=site-description>Time waits for no one.
+↑(°Д°)ハァ？</h2></div></header><ol class=menu-social><li><a href=https://space.bilibili.com/231232390 target=_blank title=Bilibili rel=me><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2"><path d="M3 10a4 4 0 014-4h10a4 4 0 014 4v6a4 4 0 01-4 4H7a4 4 0 01-4-4v-6z"/><path d="M8 3l2 3"/><path d="M16 3l-2 3"/><path d="M9 13v-2"/><path d="M15 11v2"/></svg></a></li><li><a href=https://github.com/xZhongjie target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li></ol><img id=forasoul-counter class=forasoul alt=visits>
+<script>(function(){var e,n,s,a,t="https://count.getloli.com/@xzjblog?name=xzjblog&theme=asoul&padding=5&offset=0&align=top&scale=0.5&pixelated=1&darkmode=auto",o="forasoul-last-date",i="forasoul-img-data";function r(){var e=new Date;return e.getFullYear()+"-"+(e.getMonth()+1)+"-"+e.getDate()}if(n=r(),e=document.getElementById("forasoul-counter"),a=localStorage.getItem(o),s=localStorage.getItem(i),a===n&&s){e.src=s;return}fetch(t,{mode:"cors"}).then(function(e){if(!e.ok)throw new Error("network");return e.blob()}).then(function(s){var a=new FileReader;a.onloadend=function(){try{var s=a.result;localStorage.setItem(i,s),localStorage.setItem(o,n),e.src=s}catch{e.src=t}},a.readAsDataURL(s)}).catch(function(){e.src=t})})()</script><ol class=menu id=main-menu><li><a href=/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>主页</span></a></li><li><a href=/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>归档</span></a></li><li><a href=/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>搜索</span></a></li><li><a href=/%E5%85%B3%E4%BA%8E/><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>关于</span></a></li><li class=menu-bottom-section><ol class=menu><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>暗色模式</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目录</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#code-device>Code Device</a></li><li><a href=#overview>Overview</a></li><li><a href=#languages>Languages</a><ol><li><a href=#host-language>Host Language</a></li><li><a href=#compute-language>Compute Language</a></li></ol></li><li><a href=#configuration>Configuration</a></li><li><a href=#limitations>Limitations</a></li><li><a href=#resources>Resources</a><ol><li><a href=#world-machine>World Machine</a></li><li><a href=#language-references>Language References</a></li><li><a href=#cpu-drivers>CPU Drivers</a></li></ol></li><li><a href=#lua-world-machine-plugin-api><strong>LUA World Machine Plugin API</strong></a></li><li><a href=#overview-1>Overview</a></li><li><a href=#sandboxing>Sandboxing</a></li><li><a href=#datatypes>Datatypes</a><ol><li><a href=#definitions>Definitions</a><ol><li><a href=#packet-types>Packet types</a></li><li><a href=#data-types>Data types</a></li></ol></li></ol></li><li><a href=#inputs>Inputs</a></li><li><a href=#creation>Creation</a></li><li><a href=#context-functions>Context Functions</a><ol><li><a href=#worldspace>Worldspace</a></li><li><a href=#devicespace>Devicespace</a></li><li><a href=#world-context>World Context</a></li></ol></li><li><a href=#outputs>Outputs</a></li><li><a href=#compute-kernels>Compute Kernels</a></li><li><a href=#other-functions>Other Functions</a><ol><li><a href=#progress-reporting>Progress Reporting</a></li></ol></li></ol><ol><li><a href=#1opencl-example-generator>1.OpenCL Example Generator</a></li><li><a href=#2opencl-blur>2.OpenCL Blur</a></li><li><a href=#3opencl-flowdirs>3.OpenCL FlowDirs</a></li><li><a href=#4opencl-perlinnoise>4.OpenCL PerlinNoise</a></li><li><a href=#5opencl-simplest>5.OpenCL Simplest</a></li><li><a href=#6brick-generator>6.Brick Generator</a></li></ol></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/ style=background-color:#009975;color:#fff>技术分享</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/p/worldmachinecodeprompt/>WorldmachineCodePrompt</a></h2><h3 class=article-subtitle>使用AI辅助编写Worldmachine中Code模块代码的提示词。</h3></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Jul 03, 2025</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>本文共 4675 字，阅读约 10 分钟</time></div></footer></div></header><section class=article-content><h1 id=角色与目标-role-and-goal><strong>角色与目标 (Role and Goal)</strong></h1><p>你是一位精通 World Machine Code Device 的专家级程序员。你的任务是基于我提供的官方文档、代码示例和具体需求，为我编写一个全新的、功能完整的自定义节点。你需要提供该节点所需的 <strong>Host (Lua) 代码</strong>和 <strong>Compute (OpenCL) 代码</strong>，以及其使用方法。当程序不通时，你需要根据我补充的报错进行修复。</p><h1 id=第一部分背景知识><strong>第一部分：背景知识</strong></h1><p>在开始之前，请先学习以下关于 World Machine Code Device 的核心文档。</p><h2 id=code-device>Code Device</h2><p>This feature was introduced in the “<a class=link href=https://help.world-machine.com/lookup/hurricaneridge/ target=_blank rel=noopener>Hurricane Ridge</a>” release</p><p>The Code device lets you write custom devices for World Machine. These device plugins use GPU compute and can be shared with other users safely, due to the sandboxed execution model.</p><h2 id=overview>Overview</h2><p>Your Code device contains custom programming that you create as follows:</p><ol><li>A script controlling the execution of the device, written in <a class=link href=https://www.lua.org/ target=_blank rel=noopener>Lua</a>.</li><li>Zero or more compute kernels for executing code on the GPU.</li></ol><p>When you create a new Code device and open it for editing, you will see the Code Editor view:</p><p><img src=https://help.world-machine.com/wp-content/uploads/2024/11/image.png loading=lazy alt=img></p><ul><li>The tabs across the top allow you to access the <strong>Host code</strong> (scripting language) and the <strong>Compute code</strong> (OpenCL or equivelent).</li><li>The tabs at the bottom show you any reported errors during compilation or execution of your device in the first tab, and any host script output (such as that created by the print() function) in the second tab.</li><li>The right side drawers allow you to modify the configuration of your custom device, including adding ports, parameters, and more.</li><li>The “apply changes” button commits any changes you’ve written in your code and rebuilds the device.</li></ul><h2 id=languages>Languages</h2><p>Your device is written in both a host language and a compute language.</p><ul><li>The host language is a slow scripting language executed on the CPU. Your host script acts to orchestrate the execution of your device, but should perform no major calculations itself.</li><li>The compute language is a fast, data-parallel language executed on the GPU. This is used for code that manipulates large amounts of data, such as the entire contents of a heightfield or image.</li></ul><h3 id=host-language>Host Language</h3><p>Currently <strong>Lua</strong> is the allowed host script language. Other languages may be supported in the future.</p><p>The Lua environment is by default heavily sandboxed. Other than core language function, only the standard math library is enabled. Your script will interact with World Machine via the <strong>World Machine library</strong> (exposed as ‘wm’).</p><p>This looks much like:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>-- Create an empty memory buffer
+</span></span><span class=line><span class=cl>wm.createBuffer()
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-- Get a parameter
+</span></span><span class=line><span class=cl>local myFloat = wm.parm(&#34;parm0&#34;)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-- Output to port 0
+</span></span><span class=line><span class=cl>wm.output(bufResult, 0)
+</span></span></code></pre></td></tr></table></div></div><p>See the <a class=link href=https://help.world-machine.com/topic/plugin-device-lua-api/ target=_blank rel=noopener>World Machine Lua API Reference </a>for complete details of how to interact with World Machine.</p><h3 id=compute-language>Compute Language</h3><p>Currently <strong>OpenCL</strong> is the compute language. Other languages may be supported in the future. OpenCL 1.2 is the minimum version required. Compute kernels are compiled by your GPU drivers and run on the GPU.</p><p>Any valid compute kernel can be run within World Machine.</p><p>See the Language References section for links for general information on writing compute kernels in OpenCL C.</p><h2 id=configuration>Configuration</h2><p>A number of configuration options are available for your device:</p><p><img src=https://help.world-machine.com/wp-content/uploads/2024/11/image-1.png loading=lazy alt=img></p><ul><li><strong>Identity</strong> is the most important thing to assign. When you click the <strong>Assign</strong> button, you can name your device. <strong>Naming the device embeds a hidden globally unique class identifier.</strong> Devices that have the same GUID will be considered the “same” in the eyes of World Machine, in much the same way that different Basic Perlin devices are the same. This enables you to copy/paste settings between those devices, etc. If you change the Identity of the device, it will no longer be considered the same… do so carefully.</li><li>The Family of the device controls its appearance, and where it gets sorted within the various menus and toolbars in World Machine</li><li>The Summary should be a brief description of what the device does</li><li>The Description can be more in depth. It is displayed when the user clicks a help icon.</li></ul><p>Parameters, inputs, and outputs are created the same as for Macros. To retrieve your parameters from the script, refer to it by the ID you’ve given it – this can be the automatically assigned one, or a custom one. For example:</p><p><img src=https://help.world-machine.com/wp-content/uploads/2024/11/image-2.png loading=lazy alt=img></p><h2 id=limitations>Limitations</h2><p>There are a number of limitations right now in the Code device.</p><ul><li>The scripting bindings to World Machine are still <strong>under construction</strong>.</li><li>Currently only supports heightfield and bitmap datatypes for compute.</li><li>You can only provide a build script. No other control of the device is possible.</li><li>There is no access to built-in functions, such as rescaling a packet. This would be very useful.</li><li>Only Lua and OpenCL are supported</li></ul><p>Some of these limitations will be improved over time.</p><h2 id=resources>Resources</h2><h3 id=world-machine>World Machine</h3><ul><li><a class=link href=https://help.world-machine.com/topic/plugin-device-lua-api/ target=_blank rel=noopener>World Machine Lua API</a></li></ul><h3 id=language-references>Language References</h3><ul><li><p><a class=link href=https://www.khronos.org/files/opencl30-reference-guide.pdf target=_blank rel=noopener>OpenCL API Reference Sheet</a></p></li><li><p><a class=link href=https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html target=_blank rel=noopener>OpenCL Kernel Language Reference</a></p></li><li><p><a class=link href=https://www.lua.org/pil/contents.html target=_blank rel=noopener>Lua – Getting Started</a></p></li><li><p><a class=link href=https://www.lua.org/manual/5.4/ target=_blank rel=noopener>Lua Reference Guide</a></p></li></ul><h3 id=cpu-drivers>CPU Drivers</h3><p>The default GPU backend is <strong>OpenCL</strong>. Although the Code device is intended to be GPU accelerated, you may wish to use the Intel OpenCL CPU driver to run code on your processor.</p><ul><li><a class=link href=https://www.intel.com/content/www/us/en/developer/articles/technical/intel-cpu-runtime-for-opencl-applications-with-sycl-support.html target=_blank rel=noopener>Intel OpenCL CPU Drivers</a></li></ul><p>The Intel driver has been tested and works well. (Yes, you can also use it with AMD-based systems).</p><p>For many common scenarios within World Machine, the OpenCL performance running on the CPU is competitive with the GPU.</p><p>以及LUA Plugin API文档。</p><h2 id=lua-world-machine-plugin-api><strong>LUA World Machine Plugin API</strong></h2><p>This feature was introduced in the “<a class=link href=https://help.world-machine.com/lookup/hurricaneridge/ target=_blank rel=noopener>Hurricane Ridge</a>” release</p><p>This article contains the currently supported API for interacting with World Machine from your Lua scripts within the Code device.</p><p>As the bindings are continually developed, this reference material will be updated to stay current.</p><h2 id=overview-1>Overview</h2><p>This API reference is only for the <strong>Host script language</strong>. You will also need to write one or more kernels in your compute language to create a device.</p><p>All World Machine bindings are exposed in the ‘wm’ library. To use any of the top-level commands below, make sure you access them with the ‘wm’ prefix. For example, ‘wm.parameter()’.</p><h2 id=sandboxing>Sandboxing</h2><p>To allow for secure sharing of plugin devices between users, the Lua scripting session is sandboxed:</p><ul><li>Your script has no access to the system or external data.</li><li>Your script cannot persist information outside of the device build process.</li><li>The compute kernels have no access to any other data than that provided via the scripting.</li><li>The lua math and string libraries are available. No other built-ins are provided.</li><li>The World Machine plugin API <em>is</em> accessible.</li></ul><p>Future versions may relax the sandboxing for custom devices that are not shared with others.</p><h2 id=datatypes>Datatypes</h2><p>A variety of custom datatypes are created by the World Machine library.</p><p><strong>buffer</strong>: A raw collection of bytes. Can be used to supply general memory to your compute kernel, or when accessing the underlying data of an input such as a heightfield. Your kernel should accept this as a <strong>float*</strong> parameter (or other relevant type).</p><p><strong>image</strong>: An Image datatype, as defined in OpenCL. This may be more convenient than accessing a raw buffer, and some API functions will only return images. The image will be a 2D four channel RGBA texture. Your kernel must access as an <strong>image2d_t</strong> parameter.</p><p>In addition, standard Lua datatypes are used:</p><p><strong>value</strong>: This is a Lua built-in integer or floating point value. Your kernel can accept either and WM will convert as appropriate.</p><p><strong>table</strong>: A Lua table, which is simply a collection of values.</p><p><strong>string</strong>: A Lua string.</p><p>A few additional notes:</p><ul><li>If a function takes a slot value, it should be provided an integer.</li><li>If a function takes a name, it should be provided a string.</li><li>The extended datatypes have reference semantics. For example, that means that assigning one buffer to a new buffer variable does not copy the buffer – they will both refer to the same object.</li></ul><h3 id=definitions>Definitions</h3><p>Some values defined within the library are meant to be identifiers rather than be manipulated. Providing these values allows WM to know what kind of data you are referring to.</p><h4 id=packet-types>Packet types</h4><p>You can pass these identifiers to createBuffer or createImage, among other places, to create the correct types. They are a table defined at ‘wm.packet’.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>wm.packet.hf -- A single channel heightfield image
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wm.packet.rgb -- A 3-channel rgb image.
+</span></span></code></pre></td></tr></table></div></div><h4 id=data-types>Data types</h4><p>These are values used to communicate how to interpret a raw buffer. They are a table defined at ‘wm.type’. These are unused in the current API.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>wm.type.byte -- 8bit unsigned integer data
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wm.type.int -- 32bit
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wm.type.int64 -- 64bit
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wm.type.float -- 32bit floating point
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wm.type.vec2 -- float vector2
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wm.type.vec3 -- float vector3
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wm.type.vec4 -- float vector4
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wm.type.half -- 16bit floating point
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wm.type.half3 -- 3 x 16bit floats
+</span></span></code></pre></td></tr></table></div></div><h2 id=inputs>Inputs</h2><p>Functions to take data from the input ports on the device, as well as the current parameters. The slot should be a number starting at zero for the first input.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>buffer wm.inputBuffer(slot)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>image wm.inputImage(slot)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>value wm.inputValue(slot)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>image wm.mask()
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>value wm.parameter(name)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>value wm.parm(name) -- A convenience short alias for the above
+</span></span></code></pre></td></tr></table></div></div><p>Inputs of either heightfield or bitmap type can be taken as images or buffers, using either of the first two functions above as needed. The returned result will be of the type shown and can be used or passed to other functions.</p><p>Note that if you take a bitmap input as a buffer, the data is 3 channels of 16bit floating point, which takes special consideration to access inside of an OpenCL compute kernel.</p><h2 id=creation>Creation</h2><p>Create new memory buffers or images for use by your compute kernels.</p><ul><li>If no type is specified, the default is a heightfield.</li><li>If no dimensions are specified, the current world render size is used.</li></ul><p><strong>The dims parameter is currently ignored!</strong> It is not currently possible to create images of a different size than the general context.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>image wm.createImage(type, dims)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>buffer wm.createBuffer(type, dims)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>buffer wm.createRawBuffer(bytes)
+</span></span></code></pre></td></tr></table></div></div><h2 id=context-functions>Context Functions</h2><p>Several functions are built-in to allow you to gain access to the build context your device is invoked within.</p><h3 id=worldspace>Worldspace</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>image wm.worldspace()
+</span></span></code></pre></td></tr></table></div></div><p>Generate a image containing the the xy world-space coordinates for this build, in the red and green channels. The blue and alpha channels are unused and set to zero.</p><p>The image values are unnormalized 32bit floats. They correspond exactly to the render extents defined in your project settings.</p><p>Note that the worldspace coordinates are in internal World Machine units instead of kilometers. Each unit corresponds to 8 kilometers.</p><p>This is <strong>very useful</strong> to allow your compute kernel to understand what point in the world each pixel corresponds to! You will often use this, or the devicespace() function, to easily access this information.</p><p>If you output this image directly as a bitmap, it would look like this:</p><p><img src=https://help.world-machine.com/wp-content/uploads/2024/11/image-4.png loading=lazy alt=img></p><h3 id=devicespace>Devicespace</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>image wm.devicespace()
+</span></span></code></pre></td></tr></table></div></div><p>Devicespace is the world-space coordinate transformed by the device’s placement. The placement includes rotation, translation, and any connected domain distortion input.</p><p>The RGBA image is divided into two pairs of channels. The image values are unnormalized 32bit floats with real numbers.</p><ul><li>The RG channels contains the (X,Y) distorted coordinates</li><li>The BA channels contains the undistorted (X,Y) device coordinates.</li></ul><p>It looks like this, visualized:</p><p><img src=https://help.world-machine.com/wp-content/uploads/2024/11/image-3.png loading=lazy alt=img></p><p>Generally you will only need the RG channels. Device space is very useful for generator-type devices that want to make a pattern or some other output that can be placed into the world.</p><h3 id=world-context>World Context</h3><p>Retrieve a table containing the current render extent information.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>table wm.context()
+</span></span></code></pre></td></tr></table></div></div><p>The table has the following members:</p><p>int dimX, dimY — Dimensions in pixels of the render extent</p><p>float x0, y0, x1, y1 — World render extent corners</p><p>float originX, originY — Placement origin</p><p>float rotate2D — Placement rotation in degrees</p><h2 id=outputs>Outputs</h2><p>Send data to an output port.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>wm.output(data, port)
+</span></span></code></pre></td></tr></table></div></div><p>The port should be a number, starting at zero for the first output.</p><p>The port configuration determines the acceptable datatype to send. For example, a heightfield output must contain a buffer or image. Possible types of your data include:</p><p><strong>hf</strong> : image, buffer</p><p><strong>rgb</strong> : image, buffer</p><p><strong>text</strong> : string</p><p><strong>param</strong> : value, string</p><h2 id=compute-kernels>Compute Kernels</h2><p>To perform operations on the GPU, use the runKernel function in the wm library.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>wm.runKernel(kernelname/kernelobject, arg1, arg2, ...)
+</span></span></code></pre></td></tr></table></div></div><p>The first parameter must be a string containing the name of the compute kernel, while the following arguments should be buffers, images, or values. The types must match the type defined in your kernel function.</p><p>Currently, there is no way to define the local workgroup size of a kernel.</p><h2 id=other-functions>Other Functions</h2><h3 id=progress-reporting>Progress Reporting</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>wm.progress(percent)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wm.progress(current, total)
+</span></span></code></pre></td></tr></table></div></div><p>You can specify the build progress as a floating point value from 0..1 or as current, total as integers.</p><p>There is currently no way to check if the user has requested the build to cancel.</p><h1 id=第二部分学习示例><strong>第二部分：学习示例</strong></h1><p>这里有几个完整的代码示例，请学习它们的结构和实现方式。每个示例都包含 <strong>Host (Lua)</strong> 和 <strong>Compute (OpenCL)</strong> 两部分。</p><h2 id=1opencl-example-generator>1.OpenCL Example Generator</h2><p>Host Part</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>-- The featurescale is a distance value that will correspond to the wavelength of a full sinewave, in this example
+</span></span><span class=line><span class=cl>local featurescale = wm.parameter(&#34;featureScale&#34;)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-- Switch the kernel we&#39;re using based on the option chosen by the user
+</span></span><span class=line><span class=cl>local useKernel = &#34;primary&#34;
+</span></span><span class=line><span class=cl>local kerneltype = wm.parm(&#34;type&#34;)
+</span></span><span class=line><span class=cl>if (kerneltype == 1) then
+</span></span><span class=line><span class=cl>    useKernel = &#34;secondary&#34;
+</span></span><span class=line><span class=cl>end
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-- Get the per-pixel devicespace location. This automatically accounts for device origin, rotation, and distortion
+</span></span><span class=line><span class=cl>wspace = wm.devicespace()
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-- Create a buffer for the compute result. By default, it will be a heightfield (sngle channel 32bit float) at the current device build size
+</span></span><span class=line><span class=cl>result = wm.createBuffer()
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-- Run the compute kernel!
+</span></span><span class=line><span class=cl>wm.runKernel(useKernel, wspace, result, featurescale)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-- Transfer the results and output from this device
+</span></span><span class=line><span class=cl>wm.output(result, 0)
+</span></span></code></pre></td></tr></table></div></div><p>Compute Part</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>void kernel primary(__read_only image2d_t location, global float* A, float featureScale) {
+</span></span><span class=line><span class=cl>    int2 gridPos = (int2)(get_global_id(0), get_global_id(1));
+</span></span><span class=line><span class=cl>    size_t stride = get_global_size(0);
+</span></span><span class=line><span class=cl>    size_t idx = stride * gridPos.y + gridPos.x;
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    float4 xy = read_imagef(location, gridPos);
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    float freq = 2.0f * 3.14159f / featureScale;
+</span></span><span class=line><span class=cl>    float result = sin(xy.x * freq); // along X axis
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    A[idx] = result * 0.5f + 0.5f;
+</span></span><span class=line><span class=cl>};
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>void kernel secondary(__read_only image2d_t location, global float* A, float featureScale) {
+</span></span><span class=line><span class=cl>    int2 gridPos = (int2)(get_global_id(0), get_global_id(1));
+</span></span><span class=line><span class=cl>    size_t stride = get_global_size(0);
+</span></span><span class=line><span class=cl>    size_t idx = stride * gridPos.y + gridPos.x;
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    // Get the xy location from our input image. Adjust the center of the radial gradient to the middle of our default extents (0.5, 0.5)
+</span></span><span class=line><span class=cl>    //  as a positioning offset example
+</span></span><span class=line><span class=cl>    float2 xy = read_imagef(location, gridPos).xy - (float2)(0.5f, 0.5f);
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    float freq = 2.0f * 3.14159f / featureScale;
+</span></span><span class=line><span class=cl>    float result = cos(length(xy) * freq);
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    A[idx] = result * 0.5f + 0.5f;
+</span></span><span class=line><span class=cl>};
+</span></span></code></pre></td></tr></table></div></div><h2 id=2opencl-blur>2.OpenCL Blur</h2><p>Host Part</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>-- This is a simple example of a blur kernel, applied &#39;Repeat&#39; number of times to the image.
+</span></span><span class=line><span class=cl>-- The blur kernel performs a simple 3x3 box filter convolution.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>map = wm.inputBuffer(0)
+</span></span><span class=line><span class=cl>temp = wm.createBuffer()
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>maxIter = wm.parameter(&#34;Repeat&#34;)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-- Do ping-pong buffering. Each iteration blurs twice, so that the results end up in the same buffer we started with
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>for i = 1, maxIter do
+</span></span><span class=line><span class=cl>    wm.runKernel(&#34;diffuse&#34;, map, temp)
+</span></span><span class=line><span class=cl>    wm.runKernel(&#34;diffuse&#34;, temp, map)
+</span></span><span class=line><span class=cl>    wm.progress(i, maxIter)
+</span></span><span class=line><span class=cl>end
+</span></span><span class=line><span class=cl>wm.output(map, 0)
+</span></span></code></pre></td></tr></table></div></div><p>Compute Part</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>extern size_t gridIndex();
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>void kernel diffuse(global float* A, global float *B) {
+</span></span><span class=line><span class=cl>    size_t idx = gridIndex();
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    int2 sz = (int2)(get_global_size(0), get_global_size(1));
+</span></span><span class=line><span class=cl>    int2 coord = (int2)(get_global_id(0), get_global_id(1));
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    bool oob = false;
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    if (coord.x &lt; 1 || coord.y &lt; 1)
+</span></span><span class=line><span class=cl>        oob = true;
+</span></span><span class=line><span class=cl>       
+</span></span><span class=line><span class=cl>    if (coord.x &gt;= sz.x-1 || coord.y &gt;= sz.y-1)
+</span></span><span class=line><span class=cl>        oob = true;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    // Simple out of bounds protection by not blurring the edge. This leaves a one pixel unblurred border which is undesirable but works fine for this example.        
+</span></span><span class=line><span class=cl>    if (oob) {
+</span></span><span class=line><span class=cl>        B[idx] = A[idx];
+</span></span><span class=line><span class=cl>        return;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    size_t stride = get_global_size(0);
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    float r = A[idx] + A[idx-1] + A[idx+1];   
+</span></span><span class=line><span class=cl>    r += A[idx-stride] + A[idx+stride];
+</span></span><span class=line><span class=cl>    r += A[idx-stride-1] + A[idx+stride-1];
+</span></span><span class=line><span class=cl>    r += A[idx-stride+1] + A[idx+stride+1];
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    r /= 9;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    B[idx] = r;
+</span></span><span class=line><span class=cl>};
+</span></span></code></pre></td></tr></table></div></div><h2 id=3opencl-flowdirs>3.OpenCL FlowDirs</h2><p>Host Part</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>bufInput = wm.inputBuffer(0)
+</span></span><span class=line><span class=cl>bufResult = wm.createBuffer()
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wm.runKernel(&#34;flowdir&#34;, bufInput, bufResult)
+</span></span><span class=line><span class=cl>wm.output(bufResult, 0)
+</span></span></code></pre></td></tr></table></div></div><p>Compute Part</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>//Compute kernel
+</span></span><span class=line><span class=cl>void kernel flowdir(global float* A, global float *result) {
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    float r = 0.0f;
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    int x = get_global_id(0);
+</span></span><span class=line><span class=cl>    int y = get_global_id(1);
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    size_t width = get_global_size(0);
+</span></span><span class=line><span class=cl>    size_t height = get_global_size(1);
+</span></span><span class=line><span class=cl>    size_t stride = width;
+</span></span><span class=line><span class=cl>    size_t idx = stride * get_global_id(1) + get_global_id(0);
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    // Have to protect against out of buffer access
+</span></span><span class=line><span class=cl>    if (y &gt; 0 &amp;&amp;  y &lt; height-1) {
+</span></span><span class=line><span class=cl>        if (x &gt; 0 &amp;&amp; x &lt; width-1) {
+</span></span><span class=line><span class=cl>            float cur = A[idx];
+</span></span><span class=line><span class=cl>            float w = A[idx-1] - cur;
+</span></span><span class=line><span class=cl>            float e = A[idx+1] - cur;
+</span></span><span class=line><span class=cl>            float n = A[idx+stride] - cur;
+</span></span><span class=line><span class=cl>            float s = A[idx-stride] - cur;
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>            float best = 0.0f;
+</span></span><span class=line><span class=cl>            if (w &gt;  best) {
+</span></span><span class=line><span class=cl>                r = 0.2f;
+</span></span><span class=line><span class=cl>                best = w;
+</span></span><span class=line><span class=cl>            }
+</span></span><span class=line><span class=cl>            if (e &gt;  best) {
+</span></span><span class=line><span class=cl>                r = 0.4f;
+</span></span><span class=line><span class=cl>                best = w;
+</span></span><span class=line><span class=cl>            }
+</span></span><span class=line><span class=cl>            if (n &gt;  best) {
+</span></span><span class=line><span class=cl>                r = 0.6f;
+</span></span><span class=line><span class=cl>                best = w;
+</span></span><span class=line><span class=cl>            }
+</span></span><span class=line><span class=cl>            if (s &gt;  best) {
+</span></span><span class=line><span class=cl>                r = 0.8f;
+</span></span><span class=line><span class=cl>                best = w;
+</span></span><span class=line><span class=cl>            }
+</span></span><span class=line><span class=cl>        }                    
+</span></span><span class=line><span class=cl>    }           
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    result[idx] = r;
+</span></span><span class=line><span class=cl>};
+</span></span></code></pre></td></tr></table></div></div><h2 id=4opencl-perlinnoise>4.OpenCL PerlinNoise</h2><p>Host Part</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>-- This is an example showing how to create a complex procedural generator such as Perlin noise.
+</span></span><span class=line><span class=cl>-- The overall process is still simple.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wspace = wm.devicespace()
+</span></span><span class=line><span class=cl>result = wm.createBuffer()
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>local featureScale = 1.0 / wm.parameter(&#34;parm0&#34;)
+</span></span><span class=line><span class=cl>local amplitude = wm.parameter(&#34;parm1&#34;)
+</span></span><span class=line><span class=cl>local octaves = 16
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wm.runKernel(&#34;gpuPerlin&#34;, result, wspace, featureScale, amplitude, octaves)
+</span></span><span class=line><span class=cl>wm.output(result, 0)
+</span></span></code></pre></td></tr></table></div></div><p>Compute Part</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span><span class=lnt>143
+</span><span class=lnt>144
+</span><span class=lnt>145
+</span><span class=lnt>146
+</span><span class=lnt>147
+</span><span class=lnt>148
+</span><span class=lnt>149
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>// Permute table for perlin noise
+</span></span><span class=line><span class=cl>int pRef[] = { 151,160,137,91,90,15,
+</span></span><span class=line><span class=cl>131,13,201,95,96,53,194,233,7,225,140,36,103,30,69,142,8,99,37,240,21,10,23,
+</span></span><span class=line><span class=cl>190,6,148,247,120,234,75,0,26,197,62,94,252,219,203,117,35,11,32,57,177,33,
+</span></span><span class=line><span class=cl>88,237,149,56,87,174,20,125,136,171,168,68,175,74,165,71,134,139,48,27,166,
+</span></span><span class=line><span class=cl>77,146,158,231,83,111,229,122,60,211,133,230,220,105,92,41,55,46,245,40,244,
+</span></span><span class=line><span class=cl>102,143,54,65,25,63,161,1,216,80,73,209,76,132,187,208,89,18,169,200,196,
+</span></span><span class=line><span class=cl>135,130,116,188,159,86,164,100,109,198,173,186,3,64,52,217,226,250,124,123,
+</span></span><span class=line><span class=cl>5,202,38,147,118,126,255,82,85,212,207,206,59,227,47,16,58,17,182,189,28,42,
+</span></span><span class=line><span class=cl>223,183,170,213,119,248,152,2,44,154,163,70,221,153,101,155,167,43,172,9,
+</span></span><span class=line><span class=cl>129,22,39,253,19,98,108,110,79,113,224,232,178,185,112,104,218,246,97,228,
+</span></span><span class=line><span class=cl>251,34,242,193,238,210,144,12,191,179,162,241,81,51,145,235,249,14,239,107,
+</span></span><span class=line><span class=cl>49,192,214,31,181,199,106,157,184,84,204,176,115,121,50,45,127,4,150,254,
+</span></span><span class=line><span class=cl>138,236,205,93,222,114,67,29,24,72,243,141,128,195,78,66,215,61,156,180, // end of table. 
+</span></span><span class=line><span class=cl>151,160,137,91,90,15,	// doubled up so can skip clamping
+</span></span><span class=line><span class=cl>131,13,201,95,96,53,194,233,7,225,140,36,103,30,69,142,8,99,37,240,21,10,23,
+</span></span><span class=line><span class=cl>190,6,148,247,120,234,75,0,26,197,62,94,252,219,203,117,35,11,32,57,177,33,
+</span></span><span class=line><span class=cl>88,237,149,56,87,174,20,125,136,171,168,68,175,74,165,71,134,139,48,27,166,
+</span></span><span class=line><span class=cl>77,146,158,231,83,111,229,122,60,211,133,230,220,105,92,41,55,46,245,40,244,
+</span></span><span class=line><span class=cl>102,143,54,65,25,63,161,1,216,80,73,209,76,132,187,208,89,18,169,200,196,
+</span></span><span class=line><span class=cl>135,130,116,188,159,86,164,100,109,198,173,186,3,64,52,217,226,250,124,123,
+</span></span><span class=line><span class=cl>5,202,38,147,118,126,255,82,85,212,207,206,59,227,47,16,58,17,182,189,28,42,
+</span></span><span class=line><span class=cl>223,183,170,213,119,248,152,2,44,154,163,70,221,153,101,155,167,43,172,9,
+</span></span><span class=line><span class=cl>129,22,39,253,19,98,108,110,79,113,224,232,178,185,112,104,218,246,97,228,
+</span></span><span class=line><span class=cl>251,34,242,193,238,210,144,12,191,179,162,241,81,51,145,235,249,14,239,107,
+</span></span><span class=line><span class=cl>49,192,214,31,181,199,106,157,184,84,204,176,115,121,50,45,127,4,150,254,
+</span></span><span class=line><span class=cl>138,236,205,93,222,114,67,29,24,72,243,141,128,195,78,66,215,61,156,180
+</span></span><span class=line><span class=cl>};
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>float perlin_fade(float t)
+</span></span><span class=line><span class=cl>{
+</span></span><span class=line><span class=cl>    return t * t * t * (t * (t * 6.f - 15.f) + 10.f);
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>float perlin_lerp(float t, float a, float b)
+</span></span><span class=line><span class=cl>{
+</span></span><span class=line><span class=cl>    return a + t * (b - a);
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>float perlin_grad(int hash, float x, float y)
+</span></span><span class=line><span class=cl>{
+</span></span><span class=line><span class=cl>    float z = 0.0f;
+</span></span><span class=line><span class=cl>    int h = hash &amp; 15;                      // CONVERT LO 4 BITS OF HASH CODE
+</span></span><span class=line><span class=cl>    float u = h &lt; 8 ? x : y,                 // INTO 12 GRADIENT DIRECTIONS.
+</span></span><span class=line><span class=cl>    v = h &lt; 4 ? y : h == 12 || h == 14 ? x : z;
+</span></span><span class=line><span class=cl>    return ((h &amp; 1) == 0 ? u : -u) + ((h &amp; 2) == 0 ? v : -v);
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>// Reference implementation of perlin noise, lightly modified for opencl
+</span></span><span class=line><span class=cl>float noise2(float2 loc)
+</span></span><span class=line><span class=cl>{
+</span></span><span class=line><span class=cl>    int*p = pRef;
+</span></span><span class=line><span class=cl>    float2 floc = floor(loc);
+</span></span><span class=line><span class=cl>    loc -= floc;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    int X = (int)floc.x &amp; 255,                  // FIND UNIT CUBE THAT
+</span></span><span class=line><span class=cl>    Y = (int)floc.y &amp; 255;                  // CONTAINS POINT.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    float     u = perlin_fade(loc.x),                                // COMPUTE FADE CURVES
+</span></span><span class=line><span class=cl>              v = perlin_fade(loc.y);                               // FOR EACH OF X,Y
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    int A = p[X] + Y, AA = p[A], AB = p[A + 1],      // HASH COORDINATES OF
+</span></span><span class=line><span class=cl>        B = p[X + 1] + Y, BA = p[B], BB = p[B + 1];      // THE 8 CUBE CORNERS,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    return perlin_lerp(v, perlin_lerp(u, perlin_grad(p[AA], loc.x, loc.y),  // AND ADD
+</span></span><span class=line><span class=cl>	        perlin_grad(p[BA], loc.x - 1.0f, loc.y)), // BLENDED
+</span></span><span class=line><span class=cl>	        perlin_lerp(u, perlin_grad(p[AB], loc.x, loc.y - 1.0f),  // RESULTS
+</span></span><span class=line><span class=cl>	        perlin_grad(p[BB], loc.x - 1.0f, loc.y - 1.0f)));// FROM  4
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>// Same as above, but with the permute table in fast local shared memory
+</span></span><span class=line><span class=cl>float noise2Fast(float2 loc, local int*p)
+</span></span><span class=line><span class=cl>{
+</span></span><span class=line><span class=cl>    float2 floc = floor(loc);
+</span></span><span class=line><span class=cl>    loc -= floc;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    int X = (int)floc.x &amp; 255,                  // FIND UNIT CUBE THAT
+</span></span><span class=line><span class=cl>    Y = (int)floc.y &amp; 255;                  // CONTAINS POINT.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    float     u = perlin_fade(loc.x),                                // COMPUTE FADE CURVES
+</span></span><span class=line><span class=cl>              v = perlin_fade(loc.y);                               // FOR EACH OF X,Y
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    int A = p[X] + Y, AA = p[A], AB = p[A + 1],      // HASH COORDINATES OF
+</span></span><span class=line><span class=cl>        B = p[X + 1] + Y, BA = p[B], BB = p[B + 1];      // THE 8 CUBE CORNERS,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    return perlin_lerp(v, perlin_lerp(u, perlin_grad(p[AA], loc.x, loc.y),  // AND ADD
+</span></span><span class=line><span class=cl>	        perlin_grad(p[BA], loc.x - 1.0f, loc.y)), // BLENDED
+</span></span><span class=line><span class=cl>	        perlin_lerp(u, perlin_grad(p[AB], loc.x, loc.y - 1.0f),  // RESULTS
+</span></span><span class=line><span class=cl>	        perlin_grad(p[BB], loc.x - 1.0f, loc.y - 1.0f)));// FROM  4
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>// Return the index of this cell for global memory arrays
+</span></span><span class=line><span class=cl>extern size_t gridIndex();
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>// Return the UV coordinate of the current cell within the render extent
+</span></span><span class=line><span class=cl>extern float2 uvCoord();
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>extern int2 gridCoord();
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>void kernel gpuPerlin(global float* A, image2d_t imgWS, float featureScale, float persist, int octaves) {
+</span></span><span class=line><span class=cl>    int2 loc = gridCoord();
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    float2 uv = read_imagef(imgWS, loc).xy * featureScale;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    float r = 0.0f;
+</span></span><span class=line><span class=cl>    float amp = 1.0f;
+</span></span><span class=line><span class=cl>    for (int i =0; i &lt; octaves; i++) {
+</span></span><span class=line><span class=cl>        r += noise2(uv) * amp;
+</span></span><span class=line><span class=cl>        uv *= 2.0f;
+</span></span><span class=line><span class=cl>        amp *= persist;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>   
+</span></span><span class=line><span class=cl>    // store to our buffer    
+</span></span><span class=line><span class=cl>    int idx = gridIndex();
+</span></span><span class=line><span class=cl>    A[idx] = 0.5f + 0.5f*r;
+</span></span><span class=line><span class=cl>};
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>// Use local shared memory for permute table. On older GPUs, this is faster. On modern devices the table is cached anyways.
+</span></span><span class=line><span class=cl>void kernel gpuPerlinFast(global float* A, image2d_t imgWS, float featureScale, float persist, int octaves) {
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    __local int pL[512];
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    // initialize shared memory
+</span></span><span class=line><span class=cl>    if (get_local_linear_id() == 0) {
+</span></span><span class=line><span class=cl>        for (int i = 0; i &lt; sizeof(pRef) / sizeof(pRef[0]); i++) {
+</span></span><span class=line><span class=cl>            pL[i] = pRef[i];                  
+</span></span><span class=line><span class=cl>        }             
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    barrier(CLK_GLOBAL_MEM_FENCE  );
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    int2 loc = gridCoord();
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    float2 uv = read_imagef(imgWS, loc).xy * featureScale;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    float r = 0.0f;
+</span></span><span class=line><span class=cl>    float amp = 1.0f;
+</span></span><span class=line><span class=cl>    for (int i =0; i &lt; octaves; i++) {
+</span></span><span class=line><span class=cl>        r += noise2Fast(uv, pL) * amp;
+</span></span><span class=line><span class=cl>        uv *= 2.0f;
+</span></span><span class=line><span class=cl>        amp *= persist;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>   
+</span></span><span class=line><span class=cl>    // store to our buffer    
+</span></span><span class=line><span class=cl>    int idx = gridIndex();
+</span></span><span class=line><span class=cl>    A[idx] = 0.5f + 0.5f*r;
+</span></span><span class=line><span class=cl>};
+</span></span></code></pre></td></tr></table></div></div><h2 id=5opencl-simplest>5.OpenCL Simplest</h2><p>Host Part</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>-- This plugin defines no compute kernel functions of its own - all we do is retrieve the worldspace coordinate and output it!
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-- Use the built-in worldspace function to retrieve the worldspace coordinate of every pixel, encoded as an RGB value
+</span></span><span class=line><span class=cl>mapWorldCoords = wm.worldspace()
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-- Output that image with no further modification. Usually, you&#39;d use the image as an input to a kernel, but in our simplest implementation we do nothing with it.
+</span></span><span class=line><span class=cl>wm.output(mapWorldCoords, 0)
+</span></span></code></pre></td></tr></table></div></div><p>Compute Part</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>// This part is intentionally left empty.
+</span></span></code></pre></td></tr></table></div></div><h2 id=6brick-generator>6.Brick Generator</h2><p>Host Part</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>--- Brick Generator ---
+</span></span><span class=line><span class=cl>-- Use the built-in worldspace function to retrieve the worldspace coordinate of every pixel, encoded as an RGBA value
+</span></span><span class=line><span class=cl>mapWorldCoords = wm.devicespace()
+</span></span><span class=line><span class=cl>mapHeight = wm.createImage(wm.packet.hf)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-- Run an opencl kernel to create the brick texture
+</span></span><span class=line><span class=cl>wm.runKernel(&#34;brick&#34;, mapWorldCoords, mapHeight, wm.parm(&#34;parm0&#34;), wm.parm(&#34;parm1&#34;), wm.parm(&#34;parm2&#34;), wm.parm(&#34;parm3&#34;), wm.parm(&#34;color0&#34;), wm.parm(&#34;color1&#34;), wm.parm(&#34;colorM&#34;))
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-- Output our diffuse image and our heightfield
+</span></span><span class=line><span class=cl>wm.output(mapWorldCoords, 0)
+</span></span><span class=line><span class=cl>wm.output(mapHeight, 1)
+</span></span></code></pre></td></tr></table></div></div><p>Compute Part</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl><span class=n>extern</span> <span class=n>int2</span> <span class=n>gridCoord</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>//</span> <span class=n>Hash</span> <span class=n>function</span><span class=p>,</span> <span class=n>used</span> <span class=n>to</span> <span class=n>vary</span> <span class=n>the</span> <span class=n>brick</span> <span class=n>identity</span>
+</span></span><span class=line><span class=cl><span class=n>unsigned</span> <span class=ne>int</span> <span class=nb>hash</span><span class=p>(</span><span class=n>unsigned</span> <span class=ne>int</span> <span class=n>x</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>x</span> <span class=o>^=</span> <span class=n>x</span> <span class=o>&gt;&gt;</span> <span class=mi>16</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>x</span> <span class=o>*=</span> <span class=mh>0x7feb352d</span><span class=n>U</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>x</span> <span class=o>^=</span> <span class=n>x</span> <span class=o>&gt;&gt;</span> <span class=mi>15</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>x</span> <span class=o>*=</span> <span class=mh>0x846ca68b</span><span class=n>U</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>x</span> <span class=o>^=</span> <span class=n>x</span> <span class=o>&gt;&gt;</span> <span class=mi>16</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=n>x</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>void</span> <span class=n>kernel</span> <span class=n>brick</span><span class=p>(</span><span class=n>__read_write</span> <span class=n>image2d_t</span> <span class=n>imgPos</span><span class=p>,</span> <span class=n>__write_only</span> <span class=n>image2d_t</span> <span class=n>imgHeight</span><span class=p>,</span> <span class=ne>float</span> <span class=n>scale</span><span class=p>,</span> <span class=ne>float</span> <span class=n>aspect</span><span class=p>,</span> <span class=ne>float</span> <span class=n>mortar</span><span class=p>,</span> <span class=ne>float</span> <span class=n>offsetF</span><span class=p>,</span> <span class=n>float4</span> <span class=n>color0</span><span class=p>,</span> <span class=n>float4</span> <span class=n>color1</span><span class=p>,</span> <span class=n>float4</span> <span class=n>colorM</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>int2</span> <span class=n>loc</span> <span class=o>=</span> <span class=n>gridCoord</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=n>float4</span> <span class=n>v</span> <span class=o>=</span> <span class=n>read_imagef</span><span class=p>(</span><span class=n>imgPos</span><span class=p>,</span> <span class=n>loc</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=n>float2</span> <span class=n>wpos</span> <span class=o>=</span> <span class=n>v</span><span class=o>.</span><span class=n>xy</span> <span class=o>/</span> <span class=n>scale</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>wpos</span><span class=o>.</span><span class=n>y</span> <span class=o>*=</span> <span class=n>aspect</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=o>//</span> <span class=n>We</span> <span class=n>calculate</span> <span class=n>the</span> <span class=n>brick</span> <span class=n>coordinate</span><span class=p>,</span> <span class=ow>and</span> <span class=n>then</span> <span class=n>offset</span> <span class=n>every</span> <span class=n>other</span> <span class=n>row</span> <span class=n>by</span> <span class=n>the</span> <span class=n>offset</span> <span class=n>amount</span> <span class=n>specified</span>    
+</span></span><span class=line><span class=cl>    <span class=ne>bool</span> <span class=n>offset</span> <span class=o>=</span> <span class=p>((</span><span class=ne>int</span><span class=p>)</span><span class=nb>floor</span><span class=p>(</span><span class=n>wpos</span><span class=o>.</span><span class=n>y</span><span class=p>))</span> <span class=o>%</span> <span class=mi>2</span> <span class=o>==</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>offset</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>wpos</span><span class=o>.</span><span class=n>x</span> <span class=o>+=</span> <span class=n>offsetF</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>float2</span> <span class=n>ifpart</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>float2</span> <span class=n>dist</span> <span class=o>=</span> <span class=n>fract</span><span class=p>(</span><span class=n>wpos</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>ifpart</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=n>dist</span> <span class=o>=</span> <span class=nb>min</span><span class=p>(</span><span class=n>dist</span><span class=p>,</span> <span class=mf>1.0</span><span class=n>f</span> <span class=o>-</span> <span class=n>dist</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>int2</span> <span class=n>ipart</span> <span class=o>=</span> <span class=p>(</span><span class=n>int2</span><span class=p>)(</span><span class=n>ifpart</span><span class=o>.</span><span class=n>x</span><span class=p>,</span> <span class=n>ifpart</span><span class=o>.</span><span class=n>y</span><span class=p>);</span>    
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=o>//</span> <span class=n>Create</span> <span class=n>a</span> <span class=n>brick</span> <span class=n>ID</span> <span class=n>code</span> <span class=n>from</span> <span class=n>the</span> <span class=n>brick</span> <span class=n>location</span><span class=o>.</span> <span class=n>We</span><span class=s1>&#39;ll use it to mix colors for pleasing variety       </span>
+</span></span><span class=line><span class=cl>    <span class=ne>int</span> <span class=n>brickCode</span> <span class=o>=</span> <span class=n>ipart</span><span class=o>.</span><span class=n>y</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>brickCode</span> <span class=o>=</span> <span class=nb>hash</span><span class=p>(</span><span class=mi>12</span> <span class=o>+</span> <span class=n>brickCode</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=n>brickCode</span> <span class=o>=</span> <span class=nb>hash</span><span class=p>(</span><span class=n>brickCode</span> <span class=o>+</span> <span class=n>ipart</span><span class=o>.</span><span class=n>x</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=ne>float</span> <span class=n>cellF</span> <span class=o>=</span> <span class=p>(</span><span class=n>brickCode</span> <span class=o>&amp;</span> <span class=mi>255</span><span class=p>)</span> <span class=o>/</span> <span class=mf>255.0</span><span class=n>f</span><span class=p>;</span>        
+</span></span><span class=line><span class=cl>    <span class=n>v</span> <span class=o>=</span> <span class=n>mix</span><span class=p>(</span><span class=n>color0</span><span class=p>,</span> <span class=n>color1</span><span class=p>,</span> <span class=n>cellF</span> <span class=p>);</span>    
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=o>//</span> <span class=n>Now</span> <span class=n>mix</span> <span class=ow>in</span> <span class=n>the</span> <span class=n>mortar</span> <span class=n>color</span>   
+</span></span><span class=line><span class=cl>    <span class=ne>float</span> <span class=n>b</span> <span class=o>=</span> <span class=nb>min</span><span class=p>(</span><span class=n>dist</span><span class=o>.</span><span class=n>x</span><span class=p>,</span> <span class=n>dist</span><span class=o>.</span><span class=n>y</span><span class=p>)</span> <span class=o>-</span> <span class=n>mortar</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>b</span> <span class=o>&lt;</span> <span class=mi>0</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>v</span> <span class=o>=</span> <span class=n>colorM</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>b</span> <span class=o>=</span> <span class=mf>0.0</span><span class=n>f</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=o>//</span> <span class=n>shape</span> <span class=n>heights</span>
+</span></span><span class=line><span class=cl>    <span class=n>b</span> <span class=o>=</span> <span class=nb>sqrt</span><span class=p>(</span><span class=n>b</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=n>write_imagef</span><span class=p>(</span><span class=n>imgPos</span><span class=p>,</span> <span class=n>loc</span><span class=p>,</span> <span class=n>v</span><span class=p>);</span>        
+</span></span><span class=line><span class=cl>    <span class=n>write_imagef</span><span class=p>(</span><span class=n>imgHeight</span><span class=p>,</span> <span class=n>loc</span><span class=p>,</span> <span class=n>b</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=第三部分你的任务><strong>第三部分：你的任务</strong></h1><p>现在，请根据以上知识和示例，为我创建以下指定的 Code Device。</p><p>**节点名称:**风 / Wind</p><p>**功能描述:**对来自输入端的 Heightmap 进行类似于 Photoshop 中的风滤镜的处理。</p><p>**输入端口:**Input Terrain</p><p>**输出端口:**Output Terrain</p><p>**可调整参数 (Parameters):**自由发挥。</p><p><strong>代码要求:</strong></p><ol><li><strong>Host (Lua) 代码:</strong> 自由发挥。</li><li><strong>Compute (OpenCL) 代码:</strong> 自由发挥。</li></ol></section><footer class=article-footer><section class=article-tags><a href=/tags/%E5%9C%B0%E5%BD%A2/>地形</a>
+<a href=/tags/worldmachine/>Worldmachine</a></section><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>保留全部权利</span></section></footer><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css integrity=sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV crossorigin=anonymous><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js integrity=sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8 crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous defer></script><script>window.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".main-article");renderMathInElement(e,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],ignoredClasses:["gist"]})})</script></article><aside class=related-content--wrapper><h2 class=section-title>相关文章</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/p/worldpainter%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%8E%8C%E6%8F%A1%E4%BA%86%E5%90%97-worldpainter%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/><div class=article-image><img src=/p/worldpainter%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%8E%8C%E6%8F%A1%E4%BA%86%E5%90%97-worldpainter%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/cover.a37f9356fb6032829b21bfa2ffca52e9_hu_90285a09548a04b9.png width=250 height=150 loading=lazy alt="Featured image of post WorldPainter你真的掌握了吗？ WorldPainter基础教程" data-hash="md5-o3+TVvtgMoKbIb+i/8pS6Q=="></div><div class=article-details><h2 class=article-title>WorldPainter你真的掌握了吗？ WorldPainter基础教程</h2></div></a></article><article><a href=/p/%E8%AE%B0%E4%B8%80%E6%AC%A1-koishi--napcatqq-%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%83%A8%E7%BD%B2/><div class=article-details><h2 class=article-title>记一次 Koishi + NapCatQQ 机器人部署</h2></div></a></article><article><a href=/p/%E7%92%83%E6%9C%88%E4%BA%BA%E6%B0%91%E5%A4%A7%E5%AD%A6%E6%95%99%E5%8A%A1%E5%A4%84%E7%99%BE%E5%88%86%E5%88%B6%E5%9D%87%E5%88%86%E8%AE%A1%E7%AE%97%E5%99%A8/><div class=article-details><h2 class=article-title>璃月人民大学教务处百分制均分计算器</h2></div></a></article><article><a href=/p/ruc_olnbkdlder/><div class=article-details><h2 class=article-title>RUC_OlnBkDlder</h2></div></a></article></div></div></aside><script src=https://utteranc.es/client.js repo=xZhongjie/blog_comments issue-term=pathname crossorigin=anonymous async></script><style>.utterances{max-width:unset}</style><script>let utterancesLoaded=!1;function setUtterancesTheme(e){let t=document.querySelector(".utterances iframe");t&&t.contentWindow.postMessage({type:"set-theme",theme:`github-${e}`},"https://utteranc.es")}addEventListener("message",e=>{if(e.origin!=="https://utteranc.es")return;utterancesLoaded=!0,setUtterancesTheme(document.documentElement.dataset.scheme)}),window.addEventListener("onColorSchemeChange",e=>{if(!utterancesLoaded)return;setUtterancesTheme(e.detail)})</script><footer class=site-footer><section class=copyright>&copy;
+2024 -
+2025 xZhongjie's blog</section><section class=powerby>使用 <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> 构建<br>主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.31.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>

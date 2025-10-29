@@ -1,0 +1,346 @@
+<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="自动计算教务系统成绩查询页面的百分制课程加权平均分的油猴脚本"><title>璃月人民大学教务处百分制均分计算器</title><link rel=canonical href=https://xzhongjie.github.io/p/%E7%92%83%E6%9C%88%E4%BA%BA%E6%B0%91%E5%A4%A7%E5%AD%A6%E6%95%99%E5%8A%A1%E5%A4%84%E7%99%BE%E5%88%86%E5%88%B6%E5%9D%87%E5%88%86%E8%AE%A1%E7%AE%97%E5%99%A8/><link rel=stylesheet href=/scss/style.min.ec95a8b9f278014ee967404fafda3b3d292bd5f6e45d2000339697dbda8da359.css><meta property='og:title' content="璃月人民大学教务处百分制均分计算器"><meta property='og:description' content="自动计算教务系统成绩查询页面的百分制课程加权平均分的油猴脚本"><meta property='og:url' content='https://xzhongjie.github.io/p/%E7%92%83%E6%9C%88%E4%BA%BA%E6%B0%91%E5%A4%A7%E5%AD%A6%E6%95%99%E5%8A%A1%E5%A4%84%E7%99%BE%E5%88%86%E5%88%B6%E5%9D%87%E5%88%86%E8%AE%A1%E7%AE%97%E5%99%A8/'><meta property='og:site_name' content="xZhongjie's blog"><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:published_time' content='2025-07-03T14:41:31+08:00'><meta property='article:modified_time' content='2025-07-03T14:41:31+08:00'><meta name=twitter:title content="璃月人民大学教务处百分制均分计算器"><meta name=twitter:description content="自动计算教务系统成绩查询页面的百分制课程加权平均分的油猴脚本"><link rel="shortcut icon" href=/favicon.ico></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/avatar_hu_3b4fa98dc943d54c.png width=300 height=300 class=site-logo loading=lazy alt=Avatar></a></figure><div class=site-meta><h1 class=site-name><a href=/>xZhongjie's blog</a></h1><h2 class=site-description>Time waits for no one.
+↑(°Д°)ハァ？</h2></div></header><ol class=menu-social><li><a href=https://space.bilibili.com/231232390 target=_blank title=Bilibili rel=me><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2"><path d="M3 10a4 4 0 014-4h10a4 4 0 014 4v6a4 4 0 01-4 4H7a4 4 0 01-4-4v-6z"/><path d="M8 3l2 3"/><path d="M16 3l-2 3"/><path d="M9 13v-2"/><path d="M15 11v2"/></svg></a></li><li><a href=https://github.com/xZhongjie target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li></ol><img id=forasoul-counter class=forasoul alt=visits>
+<script>(function(){var e,n,s,a,t="https://count.getloli.com/@xzjblog?name=xzjblog&theme=asoul&padding=5&offset=0&align=top&scale=0.5&pixelated=1&darkmode=auto",o="forasoul-last-date",i="forasoul-img-data";function r(){var e=new Date;return e.getFullYear()+"-"+(e.getMonth()+1)+"-"+e.getDate()}if(n=r(),e=document.getElementById("forasoul-counter"),a=localStorage.getItem(o),s=localStorage.getItem(i),a===n&&s){e.src=s;return}fetch(t,{mode:"cors"}).then(function(e){if(!e.ok)throw new Error("network");return e.blob()}).then(function(s){var a=new FileReader;a.onloadend=function(){try{var s=a.result;localStorage.setItem(i,s),localStorage.setItem(o,n),e.src=s}catch{e.src=t}},a.readAsDataURL(s)}).catch(function(){e.src=t})})()</script><ol class=menu id=main-menu><li><a href=/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>主页</span></a></li><li><a href=/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>归档</span></a></li><li><a href=/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>搜索</span></a></li><li><a href=/%E5%85%B3%E4%BA%8E/><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>关于</span></a></li><li class=menu-bottom-section><ol class=menu><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>暗色模式</span></li></ol></li></ol></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/ style=background-color:#009975;color:#fff>技术分享</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/p/%E7%92%83%E6%9C%88%E4%BA%BA%E6%B0%91%E5%A4%A7%E5%AD%A6%E6%95%99%E5%8A%A1%E5%A4%84%E7%99%BE%E5%88%86%E5%88%B6%E5%9D%87%E5%88%86%E8%AE%A1%E7%AE%97%E5%99%A8/>璃月人民大学教务处百分制均分计算器</a></h2><h3 class=article-subtitle>自动计算教务系统成绩查询页面的百分制课程加权平均分的油猴脚本</h3></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Jul 03, 2025</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>本文共 1235 字，阅读约 3 分钟</time></div></footer></div></header><section class=article-content><p>在AI加持下完成的自动计算璃月人民大学教务系统成绩查询页面的百分制课程加权平均分的油猴脚本，比较狗屎就不挂Github了。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span><span class=lnt>143
+</span><span class=lnt>144
+</span><span class=lnt>145
+</span><span class=lnt>146
+</span><span class=lnt>147
+</span><span class=lnt>148
+</span><span class=lnt>149
+</span><span class=lnt>150
+</span><span class=lnt>151
+</span><span class=lnt>152
+</span><span class=lnt>153
+</span><span class=lnt>154
+</span><span class=lnt>155
+</span><span class=lnt>156
+</span><span class=lnt>157
+</span><span class=lnt>158
+</span><span class=lnt>159
+</span><span class=lnt>160
+</span><span class=lnt>161
+</span><span class=lnt>162
+</span><span class=lnt>163
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl><span class=o>//</span> <span class=o>==</span><span class=n>UserScript</span><span class=o>==</span>
+</span></span><span class=line><span class=cl><span class=o>//</span> <span class=err>@</span><span class=n>name</span>         <span class=err>璃月人民大学教务处百分制均分计算器</span>
+</span></span><span class=line><span class=cl><span class=o>//</span> <span class=err>@</span><span class=n>version</span>      <span class=mf>1.0</span>
+</span></span><span class=line><span class=cl><span class=o>//</span> <span class=err>@</span><span class=n>description</span>  <span class=err>自动计算教务系统成绩查询页面的百分制课程加权平均分，并显示在右下角。</span>
+</span></span><span class=line><span class=cl><span class=o>//</span> <span class=err>@</span><span class=n>author</span>       <span class=n>xZhongjie</span>
+</span></span><span class=line><span class=cl><span class=o>//</span> <span class=err>@</span><span class=n>match</span>        <span class=n>https</span><span class=p>:</span><span class=o>//</span><span class=n>jw</span><span class=o>.</span><span class=n>ruc</span><span class=o>.</span><span class=n>edu</span><span class=o>.</span><span class=n>cn</span><span class=o>/</span><span class=n>Njw2017</span><span class=o>/</span><span class=n>index</span><span class=o>.</span><span class=n>html</span>
+</span></span><span class=line><span class=cl><span class=o>//</span> <span class=err>@</span><span class=n>grant</span>        <span class=n>none</span>
+</span></span><span class=line><span class=cl><span class=o>//</span> <span class=err>@</span><span class=n>license</span>      <span class=n>MIT</span>
+</span></span><span class=line><span class=cl><span class=o>//</span> <span class=o>==/</span><span class=n>UserScript</span><span class=o>==</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>function</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;use strict&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=o>//</span> <span class=err>只有在成绩查询页面才执行</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>window</span><span class=o>.</span><span class=n>location</span><span class=o>.</span><span class=n>hash</span> <span class=o>!==</span> <span class=s1>&#39;#/student/course-score-search/&#39;</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=o>//</span> <span class=err>使用</span> <span class=n>hashchange</span> <span class=err>事件来监听</span> <span class=n>URL</span> <span class=err>的变化，以适应单页面应用</span> <span class=p>(</span><span class=n>SPA</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>window</span><span class=o>.</span><span class=n>addEventListener</span><span class=p>(</span><span class=s1>&#39;hashchange&#39;</span><span class=p>,</span> <span class=n>function</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=n>window</span><span class=o>.</span><span class=n>location</span><span class=o>.</span><span class=n>hash</span> <span class=o>===</span> <span class=s1>&#39;#/student/course-score-search/&#39;</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=o>//</span> <span class=err>延迟初始化以确保页面元素加载完毕</span>
+</span></span><span class=line><span class=cl>                <span class=n>setTimeout</span><span class=p>(</span><span class=n>initialize</span><span class=p>,</span> <span class=mi>1000</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>});</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span><span class=p>;</span> <span class=o>//</span> <span class=err>如果初始加载不是目标页面，则退出</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=o>//</span> <span class=o>---</span> <span class=err>样式和</span><span class=n>UI元素创建</span> <span class=o>---</span>
+</span></span><span class=line><span class=cl>    <span class=n>function</span> <span class=n>createDisplayBox</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>const</span> <span class=n>box</span> <span class=o>=</span> <span class=n>document</span><span class=o>.</span><span class=n>createElement</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>box</span><span class=o>.</span><span class=n>id</span> <span class=o>=</span> <span class=s1>&#39;gpa-calculator-box&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=ne>Object</span><span class=o>.</span><span class=n>assign</span><span class=p>(</span><span class=n>box</span><span class=o>.</span><span class=n>style</span><span class=p>,</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>position</span><span class=p>:</span> <span class=s1>&#39;fixed&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>bottom</span><span class=p>:</span> <span class=s1>&#39;20px&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>right</span><span class=p>:</span> <span class=s1>&#39;20px&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>width</span><span class=p>:</span> <span class=s1>&#39;240px&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>padding</span><span class=p>:</span> <span class=s1>&#39;15px&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>backgroundColor</span><span class=p>:</span> <span class=s1>&#39;#f0f9eb&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>border</span><span class=p>:</span> <span class=s1>&#39;1px solid #e1f3d8&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>borderRadius</span><span class=p>:</span> <span class=s1>&#39;8px&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>boxShadow</span><span class=p>:</span> <span class=s1>&#39;0 2px 12px 0 rgba(0, 0, 0, 0.1)&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>color</span><span class=p>:</span> <span class=s1>&#39;#67c23a&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>fontSize</span><span class=p>:</span> <span class=s1>&#39;16px&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>lineHeight</span><span class=p>:</span> <span class=s1>&#39;1.5&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>zIndex</span><span class=p>:</span> <span class=s1>&#39;9999&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>fontFamily</span><span class=p>:</span> <span class=s1>&#39;Helvetica, Arial, sans-serif&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>transition</span><span class=p>:</span> <span class=s1>&#39;opacity 0.3s&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=p>});</span>
+</span></span><span class=line><span class=cl>        <span class=n>document</span><span class=o>.</span><span class=n>body</span><span class=o>.</span><span class=n>appendChild</span><span class=p>(</span><span class=n>box</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>box</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=o>//</span> <span class=o>---</span> <span class=err>核心计算逻辑</span> <span class=o>---</span>
+</span></span><span class=line><span class=cl>    <span class=n>function</span> <span class=n>calculateAndDisplay</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>const</span> <span class=n>displayBox</span> <span class=o>=</span> <span class=n>document</span><span class=o>.</span><span class=n>getElementById</span><span class=p>(</span><span class=s1>&#39;gpa-calculator-box&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=n>displayBox</span><span class=p>)</span> <span class=k>return</span><span class=p>;</span> <span class=o>//</span> <span class=err>如果窗口不存在则不执行</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=n>displayBox</span><span class=o>.</span><span class=n>innerHTML</span> <span class=o>=</span> <span class=s1>&#39;正在计算...&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>const</span> <span class=n>table</span> <span class=o>=</span> <span class=n>document</span><span class=o>.</span><span class=n>querySelector</span><span class=p>(</span><span class=s1>&#39;table.table-border&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=n>table</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>displayBox</span><span class=o>.</span><span class=n>innerHTML</span> <span class=o>=</span> <span class=s1>&#39;未找到成绩表格&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>const</span> <span class=n>headers</span> <span class=o>=</span> <span class=ne>Array</span><span class=o>.</span><span class=n>from</span><span class=p>(</span><span class=n>table</span><span class=o>.</span><span class=n>querySelectorAll</span><span class=p>(</span><span class=s1>&#39;th&#39;</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>        <span class=o>//</span> <span class=err>通过查找表头文字来确定列的索引，使脚本更健壮</span>
+</span></span><span class=line><span class=cl>        <span class=k>const</span> <span class=n>creditIndex</span> <span class=o>=</span> <span class=n>headers</span><span class=o>.</span><span class=n>findIndex</span><span class=p>(</span><span class=n>th</span> <span class=o>=&gt;</span> <span class=n>th</span><span class=o>.</span><span class=n>textContent</span><span class=o>.</span><span class=n>trim</span><span class=p>()</span> <span class=o>===</span> <span class=s1>&#39;学分&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=k>const</span> <span class=n>scoreIndex</span> <span class=o>=</span> <span class=n>headers</span><span class=o>.</span><span class=n>findIndex</span><span class=p>(</span><span class=n>th</span> <span class=o>=&gt;</span> <span class=n>th</span><span class=o>.</span><span class=n>textContent</span><span class=o>.</span><span class=n>trim</span><span class=p>()</span> <span class=o>===</span> <span class=s1>&#39;最终成绩&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=n>creditIndex</span> <span class=o>===</span> <span class=o>-</span><span class=mi>1</span> <span class=o>||</span> <span class=n>scoreIndex</span> <span class=o>===</span> <span class=o>-</span><span class=mi>1</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>displayBox</span><span class=o>.</span><span class=n>style</span><span class=o>.</span><span class=n>backgroundColor</span> <span class=o>=</span> <span class=s1>&#39;#fef0f0&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=n>displayBox</span><span class=o>.</span><span class=n>style</span><span class=o>.</span><span class=n>color</span> <span class=o>=</span> <span class=s1>&#39;#f56c6c&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=n>displayBox</span><span class=o>.</span><span class=n>innerHTML</span> <span class=o>=</span> <span class=s1>&#39;错误：无法定位“学分”或“最终成绩”列。&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>const</span> <span class=n>rows</span> <span class=o>=</span> <span class=n>table</span><span class=o>.</span><span class=n>querySelectorAll</span><span class=p>(</span><span class=s1>&#39;tbody &gt; tr&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>let</span> <span class=n>totalScorePoints</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>let</span> <span class=n>totalCredits</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>let</span> <span class=n>courseCount</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=n>rows</span><span class=o>.</span><span class=n>forEach</span><span class=p>(</span><span class=n>row</span> <span class=o>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>const</span> <span class=n>cells</span> <span class=o>=</span> <span class=n>row</span><span class=o>.</span><span class=n>querySelectorAll</span><span class=p>(</span><span class=s1>&#39;td&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=o>//</span> <span class=err>过滤掉学期小计和总计行（这些行通常只有一个单元格或带有</span> <span class=n>colspan</span><span class=err>）</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=n>cells</span><span class=o>.</span><span class=n>length</span> <span class=o>&lt;</span> <span class=n>Math</span><span class=o>.</span><span class=n>max</span><span class=p>(</span><span class=n>creditIndex</span><span class=p>,</span> <span class=n>scoreIndex</span><span class=p>)</span> <span class=o>+</span> <span class=mi>1</span> <span class=o>||</span> <span class=n>cells</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span><span class=o>.</span><span class=n>hasAttribute</span><span class=p>(</span><span class=s1>&#39;colspan&#39;</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=k>const</span> <span class=n>creditText</span> <span class=o>=</span> <span class=n>cells</span><span class=p>[</span><span class=n>creditIndex</span><span class=p>]</span><span class=o>.</span><span class=n>textContent</span><span class=o>.</span><span class=n>trim</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>            <span class=k>const</span> <span class=n>scoreText</span> <span class=o>=</span> <span class=n>cells</span><span class=p>[</span><span class=n>scoreIndex</span><span class=p>]</span><span class=o>.</span><span class=n>textContent</span><span class=o>.</span><span class=n>trim</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=o>//</span> <span class=err>尝试将成绩转换为数字，如果失败（例如成绩是</span><span class=s1>&#39;A&#39;</span><span class=p>,</span> <span class=s1>&#39;P&#39;</span><span class=err>等），则忽略该行</span>
+</span></span><span class=line><span class=cl>            <span class=k>const</span> <span class=n>score</span> <span class=o>=</span> <span class=n>parseFloat</span><span class=p>(</span><span class=n>scoreText</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=n>isNaN</span><span class=p>(</span><span class=n>score</span><span class=p>)</span> <span class=o>&amp;&amp;</span> <span class=n>isFinite</span><span class=p>(</span><span class=n>score</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>const</span> <span class=n>credit</span> <span class=o>=</span> <span class=n>parseFloat</span><span class=p>(</span><span class=n>creditText</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=n>isNaN</span><span class=p>(</span><span class=n>credit</span><span class=p>)</span> <span class=o>&amp;&amp;</span> <span class=n>credit</span> <span class=o>&gt;</span> <span class=mi>0</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                    <span class=n>totalScorePoints</span> <span class=o>+=</span> <span class=n>score</span> <span class=o>*</span> <span class=n>credit</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>                    <span class=n>totalCredits</span> <span class=o>+=</span> <span class=n>credit</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>                    <span class=n>courseCount</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>                <span class=p>}</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>});</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=n>totalCredits</span> <span class=o>&gt;</span> <span class=mi>0</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>const</span> <span class=n>average</span> <span class=o>=</span> <span class=p>(</span><span class=n>totalScorePoints</span> <span class=o>/</span> <span class=n>totalCredits</span><span class=p>)</span><span class=o>.</span><span class=n>toFixed</span><span class=p>(</span><span class=mi>3</span><span class=p>);</span> <span class=o>//</span> <span class=err>保留三位小数</span>
+</span></span><span class=line><span class=cl>            <span class=n>displayBox</span><span class=o>.</span><span class=n>innerHTML</span> <span class=o>=</span> <span class=err>`</span>
+</span></span><span class=line><span class=cl>                <span class=o>&lt;</span><span class=n>strong</span> <span class=n>style</span><span class=o>=</span><span class=s2>&#34;font-size: 18px;&#34;</span><span class=o>&gt;</span><span class=err>百分制均分</span><span class=p>:</span> <span class=o>$</span><span class=p>{</span><span class=n>average</span><span class=p>}</span><span class=o>&lt;/</span><span class=n>strong</span><span class=o>&gt;&lt;</span><span class=n>br</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=o>&lt;</span><span class=n>small</span> <span class=n>style</span><span class=o>=</span><span class=s2>&#34;color: #909399;&#34;</span><span class=o>&gt;</span><span class=p>(</span><span class=err>基于</span> <span class=o>$</span><span class=p>{</span><span class=n>courseCount</span><span class=p>}</span> <span class=err>门课程</span><span class=p>,</span> <span class=err>总计</span> <span class=o>$</span><span class=p>{</span><span class=n>totalCredits</span><span class=p>}</span> <span class=err>学分</span><span class=p>)</span><span class=o>&lt;/</span><span class=n>small</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=err>`</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>displayBox</span><span class=o>.</span><span class=n>innerHTML</span> <span class=o>=</span> <span class=s1>&#39;无符合条件的百分制课程&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=o>//</span> <span class=o>---</span> <span class=err>延迟和防抖动</span> <span class=o>---</span>
+</span></span><span class=line><span class=cl>    <span class=n>function</span> <span class=n>debounce</span><span class=p>(</span><span class=k>func</span><span class=p>,</span> <span class=n>delay</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>let</span> <span class=n>timeout</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>function</span><span class=p>(</span><span class=o>...</span><span class=n>args</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>clearTimeout</span><span class=p>(</span><span class=n>timeout</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=n>timeout</span> <span class=o>=</span> <span class=n>setTimeout</span><span class=p>(()</span> <span class=o>=&gt;</span> <span class=k>func</span><span class=o>.</span><span class=n>apply</span><span class=p>(</span><span class=n>this</span><span class=p>,</span> <span class=n>args</span><span class=p>),</span> <span class=n>delay</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>};</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=o>//</span> <span class=o>---</span> <span class=err>初始化和</span><span class=n>DOM监听</span> <span class=o>---</span>
+</span></span><span class=line><span class=cl>    <span class=n>function</span> <span class=n>initialize</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=o>//</span> <span class=err>检查显示窗口是否已存在</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=n>document</span><span class=o>.</span><span class=n>getElementById</span><span class=p>(</span><span class=s1>&#39;gpa-calculator-box&#39;</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>calculateAndDisplay</span><span class=p>();</span> <span class=o>//</span> <span class=err>如果存在，直接计算</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>const</span> <span class=n>displayBox</span> <span class=o>=</span> <span class=n>createDisplayBox</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>        <span class=k>const</span> <span class=n>debouncedCalc</span> <span class=o>=</span> <span class=n>debounce</span><span class=p>(</span><span class=n>calculateAndDisplay</span><span class=p>,</span> <span class=mi>500</span><span class=p>);</span> <span class=o>//</span> <span class=mi>500</span><span class=n>ms</span> <span class=err>防抖</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=o>//</span> <span class=err>使用</span> <span class=n>MutationObserver</span> <span class=err>监听</span> <span class=n>DOM</span> <span class=err>变化，以应对</span> <span class=n>Vue</span><span class=o>.</span><span class=n>js</span> <span class=err>动态加载内容</span>
+</span></span><span class=line><span class=cl>        <span class=k>const</span> <span class=n>observer</span> <span class=o>=</span> <span class=n>new</span> <span class=n>MutationObserver</span><span class=p>((</span><span class=n>mutations</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>for</span> <span class=p>(</span><span class=k>const</span> <span class=n>mutation</span> <span class=n>of</span> <span class=n>mutations</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=p>(</span><span class=n>mutation</span><span class=o>.</span><span class=n>type</span> <span class=o>===</span> <span class=s1>&#39;childList&#39;</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                    <span class=o>//</span> <span class=err>只要内容区域发生变化，就触发重新计算</span>
+</span></span><span class=line><span class=cl>                    <span class=n>debouncedCalc</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>                    <span class=k>return</span><span class=p>;</span> <span class=o>//</span> <span class=err>找到变化后即可，无需继续遍历</span>
+</span></span><span class=line><span class=cl>                <span class=p>}</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>});</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=o>//</span> <span class=err>监听整个应用容器的变化</span>
+</span></span><span class=line><span class=cl>        <span class=k>const</span> <span class=n>targetNode</span> <span class=o>=</span> <span class=n>document</span><span class=o>.</span><span class=n>querySelector</span><span class=p>(</span><span class=s1>&#39;.content-tabs&#39;</span><span class=p>)</span> <span class=o>||</span> <span class=n>document</span><span class=o>.</span><span class=n>getElementById</span><span class=p>(</span><span class=s1>&#39;app&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=n>targetNode</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>observer</span><span class=o>.</span><span class=n>observe</span><span class=p>(</span><span class=n>targetNode</span><span class=p>,</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>childList</span><span class=p>:</span> <span class=bp>true</span><span class=p>,</span> <span class=o>//</span> <span class=err>监视子节点的添加或删除</span>
+</span></span><span class=line><span class=cl>                <span class=n>subtree</span><span class=p>:</span> <span class=bp>true</span>      <span class=o>//</span> <span class=err>监视所有后代节点</span>
+</span></span><span class=line><span class=cl>            <span class=p>});</span>
+</span></span><span class=line><span class=cl>            <span class=o>//</span> <span class=err>首次加载时手动执行一次计算</span>
+</span></span><span class=line><span class=cl>            <span class=n>debouncedCalc</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>displayBox</span><span class=o>.</span><span class=n>innerHTML</span> <span class=o>=</span> <span class=s1>&#39;脚本初始化失败: 未找到监听目标。&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=o>//</span> <span class=err>主程序入口</span>
+</span></span><span class=line><span class=cl>    <span class=o>//</span> <span class=err>延迟</span> <span class=mi>1</span> <span class=err>秒执行，以确保</span> <span class=n>Vue</span> <span class=err>应用已挂载</span>
+</span></span><span class=line><span class=cl>    <span class=n>setTimeout</span><span class=p>(</span><span class=n>initialize</span><span class=p>,</span> <span class=mi>1000</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>})();</span>
+</span></span></code></pre></td></tr></table></div></div></section><footer class=article-footer><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>保留全部权利</span></section></footer><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css integrity=sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV crossorigin=anonymous><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js integrity=sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8 crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous defer></script><script>window.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".main-article");renderMathInElement(e,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],ignoredClasses:["gist"]})})</script></article><aside class=related-content--wrapper><h2 class=section-title>相关文章</h2><div class=related-content><div class="flex article-list--tile"><article><a href=/p/%E8%AE%B0%E4%B8%80%E6%AC%A1-koishi--napcatqq-%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%83%A8%E7%BD%B2/><div class=article-details><h2 class=article-title>记一次 Koishi + NapCatQQ 机器人部署</h2></div></a></article><article><a href=/p/worldmachinecodeprompt/><div class=article-details><h2 class=article-title>WorldmachineCodePrompt</h2></div></a></article><article><a href=/p/ruc_olnbkdlder/><div class=article-details><h2 class=article-title>RUC_OlnBkDlder</h2></div></a></article><article class=has-image><a href=/p/worldpainter%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%8E%8C%E6%8F%A1%E4%BA%86%E5%90%97-worldpainter%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/><div class=article-image><img src=/p/worldpainter%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%8E%8C%E6%8F%A1%E4%BA%86%E5%90%97-worldpainter%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/cover.a37f9356fb6032829b21bfa2ffca52e9_hu_90285a09548a04b9.png width=250 height=150 loading=lazy alt="Featured image of post WorldPainter你真的掌握了吗？ WorldPainter基础教程" data-hash="md5-o3+TVvtgMoKbIb+i/8pS6Q=="></div><div class=article-details><h2 class=article-title>WorldPainter你真的掌握了吗？ WorldPainter基础教程</h2></div></a></article></div></div></aside><script src=https://utteranc.es/client.js repo=xZhongjie/blog_comments issue-term=pathname crossorigin=anonymous async></script><style>.utterances{max-width:unset}</style><script>let utterancesLoaded=!1;function setUtterancesTheme(e){let t=document.querySelector(".utterances iframe");t&&t.contentWindow.postMessage({type:"set-theme",theme:`github-${e}`},"https://utteranc.es")}addEventListener("message",e=>{if(e.origin!=="https://utteranc.es")return;utterancesLoaded=!0,setUtterancesTheme(document.documentElement.dataset.scheme)}),window.addEventListener("onColorSchemeChange",e=>{if(!utterancesLoaded)return;setUtterancesTheme(e.detail)})</script><footer class=site-footer><section class=copyright>&copy;
+2024 -
+2025 xZhongjie's blog</section><section class=powerby>使用 <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> 构建<br>主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.31.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>
