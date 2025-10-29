@@ -57,24 +57,49 @@
         </ol>
     {{- end -}}
     {{ if .IsHome }}
+    <img id="forasoul-counter" class="forasoul" alt="visits" />
     <script>
     (function(){
-        try {
-            var key = 'xzjblog_last_count';
-            var today = new Date().toISOString().slice(0,10); // YYYY-MM-DD
-            if (localStorage.getItem(key) !== today) {
-                localStorage.setItem(key, today);
-                var img = new Image();
-                img.className = 'forasoul';
-                img.src = 'https://count.getloli.com/@xzjblog?name=xzjblog&theme=asoul&padding=5&offset=0&align=top&scale=0.5&pixelated=1&darkmode=auto';
-                img.alt = '';
-                img.loading = 'lazy';
-                // append to body so it fires the counter once per day per browser
-                document.body.appendChild(img);
-            }
-        } catch (e) {
-            // fail silently
+        var url = "https://count.getloli.com/@xzjblog?name=xzjblog&theme=asoul&padding=5&offset=0&align=top&scale=0.5&pixelated=1&darkmode=auto";
+        var keyDate = "forasoul-last-date";
+        var keyImg  = "forasoul-img-data";
+        function todayStr(){
+            var d = new Date();
+            return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
         }
+        var today = todayStr();
+        var img = document.getElementById("forasoul-counter");
+        var storedDate = localStorage.getItem(keyDate);
+        var storedImg  = localStorage.getItem(keyImg);
+
+        // 如果当天已经缓存了图片，直接显示缓存
+        if(storedDate === today && storedImg){
+            img.src = storedImg;
+            return;
+        }
+
+        // 否则尝试用 CORS fetch 获取图片并缓存为 data URL。
+        fetch(url, { mode: 'cors' }).then(function(resp){
+            if(!resp.ok) throw new Error('network');
+            return resp.blob();
+        }).then(function(blob){
+            var reader = new FileReader();
+            reader.onloadend = function(){
+                try{
+                    var dataUrl = reader.result;
+                    localStorage.setItem(keyImg, dataUrl);
+                    localStorage.setItem(keyDate, today);
+                    img.src = dataUrl;
+                }catch(e){
+                    // 存储失败则退回直接显示远程图片
+                    img.src = url;
+                }
+            };
+            reader.readAsDataURL(blob);
+        }).catch(function(){
+            // 失败则退回直接显示远程图片
+            img.src = url;
+        });
     })();
     </script>
     {{ end }}
