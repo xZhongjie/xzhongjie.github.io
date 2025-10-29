@@ -57,7 +57,26 @@
         </ol>
     {{- end -}}
     {{ if .IsHome }}
-    <img class="forasoul" src="https://count.getloli.com/@xzjblog?name=xzjblog&amp;theme=asoul&amp;padding=5&amp;offset=0&amp;align=top&amp;scale=0.5&amp;pixelated=1&amp;darkmode=auto">
+    <script>
+    (function(){
+        try {
+            var key = 'xzjblog_last_count';
+            var today = new Date().toISOString().slice(0,10); // YYYY-MM-DD
+            if (localStorage.getItem(key) !== today) {
+                localStorage.setItem(key, today);
+                var img = new Image();
+                img.className = 'forasoul';
+                img.src = 'https://count.getloli.com/@xzjblog?name=xzjblog&theme=asoul&padding=5&offset=0&align=top&scale=0.5&pixelated=1&darkmode=auto';
+                img.alt = '';
+                img.loading = 'lazy';
+                // append to body so it fires the counter once per day per browser
+                document.body.appendChild(img);
+            }
+        } catch (e) {
+            // fail silently
+        }
+    })();
+    </script>
     {{ end }}
     <ol class="menu" id="main-menu">
         {{ $currentPage := . }}
